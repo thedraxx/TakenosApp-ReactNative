@@ -17,11 +17,15 @@ const Actions = () => {
             <ContainerButton>
                 <Button>
                     <TextButton>
-                        Depositar
+                        <Icon name="download" color={'white'} size={18} style={{ marginRight: 10 }} />
+                        {' Depositar'}
                     </TextButton>
                 </Button>
                 <Button>
-                    <TextButton>Retirar</TextButton>
+                    <TextButton>
+                        <Icon name="upload" color={'white'} size={18} style={{ marginRight: 10, marginLeft: 10 }} />
+                        {' Retirar'}
+                    </TextButton>
                 </Button>
             </ContainerButton>
         </Container>

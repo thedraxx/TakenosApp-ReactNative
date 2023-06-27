@@ -1,14 +1,18 @@
 import styled from 'styled-components/native';
+import { Colors } from '../../helpers/Color';
 
 export const Container = styled.View`
-  width: 90%;
+    width: 90%;
     height: 30%;
     background-color: #fff;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    elevation: 5;
+    background-color: white;
+    padding: 10px;
 `;
 
 
@@ -41,15 +45,16 @@ export const ContainerButton = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: 40%;
+    width: 42%;
     height: 50%;
-    background-color: purple;
+    background-color: ${Colors.primary};
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-left: 15px;
     margin-right: 15px;
+    
 `;
 
 
@@ -58,7 +63,7 @@ export const TextButton = styled.Text`
     font-weight: bold;
     color: white;
     margin-left: 5px;
-    margin-top: 15px;
+
     text-align: center;
     width: 100%;
     height: 100%;
@@ -66,14 +71,12 @@ export const TextButton = styled.Text`
     align-items: center;
     text-align: center;
     padding: 10px;
-    margin-top: 10px;
-    
 
 `;
 export const TextHello = styled.Text`
     font-size: 20px;
     font-weight: bold;
-    color: purple;
+    color: ${Colors.primary};
     margin-left: 5px;
     margin-top: 15px;
 `;

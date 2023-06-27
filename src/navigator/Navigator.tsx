@@ -7,12 +7,18 @@ import Account from '../screens/Account/Account';
 import Icon from 'react-native-vector-icons/dist/Entypo';
 import Icon2 from 'react-native-vector-icons/dist/Feather';
 import { ContainerImage, ImageLogo } from './style';
+import { Colors } from '../helpers/Color';
 
 const Tab = createBottomTabNavigator();
 
 const Navigator = () => {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator
+            screenOptions={{
+                tabBarActiveTintColor: `${Colors.primary}`,
+                tabBarInactiveTintColor: 'gray',
+            }}
+        >
             <Tab.Screen
                 name="Inicio"
                 component={Home}
@@ -28,13 +34,14 @@ const Navigator = () => {
                     headerTitle: () => (
                         <ContainerImage>
                             <ImageLogo source={require('../../public/logo.png')} />
-                            <Icon2 name="bell" color={'purple'} size={25} style={{
+                            <Icon2 name="bell" color={Colors.primary} size={25} style={{
                                 padding: 5,
                                 backgroundColor: 'white',
                                 borderRadius: 50,
                             }} />
                         </ContainerImage>
                     ),
+
                 }}
             />
             <Tab.Screen
