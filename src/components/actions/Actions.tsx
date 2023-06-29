@@ -1,17 +1,36 @@
-import React from 'react';
-import { Button, Container, ContainerButton, ContainerHello, ContainerMoney, TextButton, TextHello, TextPrice } from './style';
+import React, { useState } from 'react';
+import { Button, ButtonAdd, Container, ContainerButton, ContainerButtons, ContainerHello, ContainerMoney, TextButton, TextHello, TextPrice } from './style';
 import Icon from 'react-native-vector-icons/dist/Entypo';
 import Icon2 from 'react-native-vector-icons/dist/Ionicons';
 
 const Actions = () => {
+
+    const [showMoneyWallet, setShowMoneyWallet] = useState(false);
+
     return (
         <Container>
             <ContainerHello>
                 <TextHello>Hola Francisco!</TextHello>
                 <ContainerMoney>
-                    <TextPrice>$109,65</TextPrice>
-                    <Icon name="eye" color={'black'} size={20} style={{ marginLeft: 130 }} />
-                    <Icon2 name="reload" color={'black'} size={20} style={{ marginRight: 20 }} />
+                    <TextPrice>
+                        {showMoneyWallet ? '$109,65' : '******'}
+                    </TextPrice>
+                    <ContainerButtons>
+                        <ButtonAdd
+                            onPress={() => setShowMoneyWallet(!showMoneyWallet)}
+                        >
+                            {
+                                showMoneyWallet ?
+                                    <Icon name="eye" color={'black'} size={20} />
+                                    :
+                                    <Icon name="eye-with-line" color={'black'} size={20} />
+                            }
+                        </ButtonAdd>
+                        <ButtonAdd>
+                            <Icon2 name="reload" color={'black'} size={20} style={{ marginRight: 20 }} />
+                        </ButtonAdd>
+                    </ContainerButtons>
+
                 </ContainerMoney>
             </ContainerHello>
             <ContainerButton>

@@ -28,7 +28,6 @@ export const ContainerHello = styled.View`
 export const ContainerMoney = styled.View`
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
@@ -63,7 +62,6 @@ export const TextButton = styled.Text`
     font-weight: bold;
     color: white;
     margin-left: 5px;
-
     text-align: center;
     width: 100%;
     height: 100%;
@@ -86,8 +84,22 @@ export const TextPrice = styled.Text`
     font-size: 40px;
     font-weight: bold;
     color: black;
-    margin-left: 5px;
-    
+    left: 0px;
+`;
 
+export const ButtonAdd = styled.TouchableOpacity`
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin-left: -5px;
+`;
 
+export const ContainerButtons   = styled.View`
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 0px;
 `;

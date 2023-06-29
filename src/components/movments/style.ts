@@ -30,8 +30,8 @@ export const ContainerFlatList = styled.View`
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    flex:1;
-  
+    padding-top: 10px;
+    padding-bottom: 10px;
 `;
 
 export const TextHello = styled.Text`
@@ -119,4 +119,9 @@ export const ListFooter = styled.View`
     padding-top: 15px;
 
 
+`;
+export const Separator = styled.View`
+    height: 1px;
+    width: 100%;
+    background-color: #CED0CE;
 `;

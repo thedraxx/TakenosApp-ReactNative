@@ -4,7 +4,7 @@ export interface Movimiento {
     descripcion: string;
     monto: number;
     tipo: 'egreso' | 'deposito';
-    status: 'completado';
+    status: 'completado' | 'pendiente' | 'cancelado';
     nombre: string;
 }
 
