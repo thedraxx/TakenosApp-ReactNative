@@ -2,21 +2,36 @@ const { response, request } = require('express');
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuario');
 
-const usuariosGet = async (req = request, res = response) => {
+const startLogin = async (req = request, res = response) => {
 
-    const { limite = 5, desde = 0 } = req.query;
-    const query = { estado: true };
+    const { correo, password } = req.body;
 
-    const [total, usuarios] = await Promise.all([
-        Usuario.countDocuments(query),
-        Usuario.find(query)
-            .skip(Number(desde))
-            .limit(Number(limite)),
-    ]);
+    const usuario = await Usuario.findOne({ correo });
 
-    res.json({
-        total,
-        usuarios,
+    if (!usuario) {
+        return res.status(400).json({
+            msg: 'Usuario / Password no son correctos - correo',
+        });
+    }
+
+    // Si el usuario está activo
+    if (!usuario.estado) {
+        return res.status(400).json({
+            msg: 'Usuario / Password no son correctos - estado: false',
+        });
+    }
+
+    // Verificar la contraseña
+    const validPassword = bcryptjs.compareSync(password, usuario.password);
+    if (!validPassword) {
+        return res.status(400).json({
+            msg: 'Usuario / Password no son correctos - password',
+        });
+    }
+
+    res.status(200).json({
+        usuario,
+        msg: 'Login ok',
     });
 };
 
@@ -32,7 +47,7 @@ const usuariosPost = async (req, res = response) => {
     // Guardar en BD
     await usuario.save();
 
-    res.json({
+    res.status(200).json({
         usuario,
     });
 };
@@ -49,7 +64,7 @@ const usuariosDelete = async (req, res = response) => {
 
 
 module.exports = {
-    usuariosGet,
+    startLogin,
     usuariosPost,
     usuariosDelete,
 };

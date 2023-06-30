@@ -18,17 +18,23 @@ const GeneralNavigator = () => {
 
     const { auth } = useContext(AuthContext);
 
-    console.log(auth);
-
     return (
         <>
             <Stack.Navigator
-                initialRouteName="Login"
                 screenOptions={{ headerShown: false }}
             >
-                <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen name="Register" component={Register} />
-                {/* <Stack.Screen name="Home" component={Navigator} /> */}
+                {
+                    !auth ? (
+                        <>
+                            <Stack.Screen name="Login" component={Login} />
+                            <Stack.Screen name="Register" component={Register} />
+                        </>
+                    ) : (
+                        <>
+                            <Stack.Screen name="Home" component={Navigator} />
+                        </>
+                    )
+                }
             </Stack.Navigator>
         </>
     );

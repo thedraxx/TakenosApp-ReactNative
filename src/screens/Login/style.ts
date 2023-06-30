@@ -51,12 +51,12 @@ export const Title = styled.Text`
 export const ButtonArea = styled.View `
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: 40%;
+    width: 90%;
     height: 60px;
     background-color: #fff;
     border-radius: 30px;

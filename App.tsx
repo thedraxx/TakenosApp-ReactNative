@@ -8,7 +8,6 @@ const App = () => {
   return (
     <AuthProvider>
       <NavigationContainer>
-        {/* <Navigator /> */}
         <GeneralNavigator />
       </NavigationContainer>
     </AuthProvider>
