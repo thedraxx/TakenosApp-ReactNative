@@ -1,7 +1,5 @@
 import {  MovimientosDinero } from '../interface/iDatabaseMovments';
 
-
-
 export const Movimientos:MovimientosDinero  = {
     'movimientos': [
         {

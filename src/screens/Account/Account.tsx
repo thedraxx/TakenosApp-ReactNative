@@ -1,8 +1,13 @@
 import React from 'react';
+import { Container, Text } from './style';
 
 const Account = () => {
     return (
-        <div>Account</div>
+        <Container>
+            <Text>
+                Work in progress...
+            </Text>
+        </Container>
     );
 };
 

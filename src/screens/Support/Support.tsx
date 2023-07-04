@@ -1,8 +1,13 @@
 import React from 'react';
+import { Container, Text } from './style';
 
 const Support = () => {
     return (
-        <div>Support</div>
+        <Container>
+            <Text>
+                Work in progress...
+            </Text>
+        </Container>
     );
 };
 

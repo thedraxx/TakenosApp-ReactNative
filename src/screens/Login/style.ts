@@ -4,7 +4,7 @@ import { Colors } from '../../helpers/Color';
 export const Container = styled.View`
   width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: ${Colors.white};
     align-items: center;
     justify-content: center;
     flex:1;
@@ -22,30 +22,25 @@ export const InputArea = styled.View`
     padding: 40px;  
     align-items: center;
     justify-content: center;
-
 `;
-
 
 export const InputText = styled.TextInput`
     width: 100%;
     height: 60px;
-    background-color: #fff;
+    background-color: ${Colors.white};
     border-radius: 30px;
     padding-left: 20px;
     font-size: 16px;
-    color: #000;
+    color: ${Colors.black};
     margin-bottom: 15px;
-    border: 1px solid #000;
-
-
+    border: 1px solid ${Colors.black};
 `;
 
 export const Title = styled.Text`
     font-size: 20px;
     font-weight:500;
-    color: #000;
+    color: ${Colors.black};
     margin-bottom: 20px;
-
 `;
 
 export const ButtonArea = styled.View `
@@ -58,7 +53,7 @@ export const ButtonArea = styled.View `
 export const Button = styled.TouchableOpacity`
     width: 90%;
     height: 60px;
-    background-color: #fff;
+    background-color: ${Colors.white};
     border-radius: 30px;
     align-items: center;
     justify-content: center;
@@ -69,9 +64,7 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const TitleButton = styled.TouchableOpacity`
-
     font-size: 16px;
     font-weight: 500;
     color: ${Colors.primary};
-
 `;

@@ -11,7 +11,40 @@ import { Colors } from '../helpers/Color';
 
 const Tab = createBottomTabNavigator();
 
+const IconHome = () => (
+    <Icon name="home" color={Colors.primary} size={20} />
+);
+
+const IconArchive = () => (
+    <Icon name="archive" color={Colors.primary} size={20} />
+);
+
+const IconMessage = () => (
+    <Icon name="message" color={Colors.primary} size={20} />
+);
+
+const IconUser = () => (
+    <Icon name="user" color={Colors.primary} size={20} />
+);
+
+const HeaderTitle = () => (
+    <ContainerImage>
+        <ImageLogo source={require('../../public/logo.png')} />
+        <Icon2
+            name="bell"
+            color={Colors.primary}
+            size={25}
+            style={{
+                padding: 5,
+                backgroundColor: 'white',
+                borderRadius: 50,
+            }}
+        />
+    </ContainerImage>
+);
+
 const Navigator = () => {
+
     return (
         <Tab.Navigator
             screenOptions={{
@@ -23,34 +56,20 @@ const Navigator = () => {
                 name="Inicio"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Icon name="home" color={color} size={size} />
-                    ),
+                    tabBarIcon: IconHome,
                     headerStyle: {
                         backgroundColor: 'transparent',
                         shadowColor: 'transparent',
                         elevation: 0,
                     },
-                    headerTitle: () => (
-                        <ContainerImage>
-                            <ImageLogo source={require('../../public/logo.png')} />
-                            <Icon2 name="bell" color={Colors.primary} size={25} style={{
-                                padding: 5,
-                                backgroundColor: 'white',
-                                borderRadius: 50,
-                            }} />
-                        </ContainerImage>
-                    ),
-
+                    headerTitle: HeaderTitle,
                 }}
             />
             <Tab.Screen
                 name="Historial"
                 component={History}
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Icon name="archive" color={color} size={size} />
-                    ),
+                    tabBarIcon: IconArchive,
                     headerStyle: {
                         backgroundColor: 'white',
                         shadowColor: 'transparent',
@@ -62,20 +81,15 @@ const Navigator = () => {
                 name="Soporte"
                 component={Support}
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Icon name="message" color={color} size={size} />
-                    ),
+                    tabBarIcon: IconMessage,
                 }}
             />
             <Tab.Screen
                 name="Cuenta"
                 component={Account}
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Icon name="user" color={color} size={size} />
-                    ),
+                    tabBarIcon: IconUser,
                 }}
-
             />
         </Tab.Navigator>
     );

@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
+import { Colors } from '../../helpers/Color';
 
 export const Container = styled.View`
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: ${Colors.white};
     align-items: center;
     justify-content: center;
     elevation: 5;
@@ -11,7 +12,6 @@ export const Container = styled.View`
     padding: 10px;
 
 `;
-
 
 export const ContainerHello = styled.View`
     width: 100%;
@@ -22,7 +22,6 @@ export const ContainerHello = styled.View`
     top: 0px;
 `;
 
-
 export const ContainerFlatList = styled.View`
     width: 100%;
     border-radius: 10px;
@@ -31,13 +30,12 @@ export const ContainerFlatList = styled.View`
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
-  
 `;
 
 export const TextHello = styled.Text`
     font-size: 20px;
     font-weight: bold;
-    color: black;
+    color: ${Colors.black};
     margin-left: 10px;
     margin-top: 15px;
 `;
@@ -49,27 +47,26 @@ export const ListMovimientos = styled.FlatList`
     padding-top: 10px;
 `;
 
-
 export const TextTitlePay = styled.Text`
     font-size: 15px;
     font-weight: bold;
-    color: black;
+    color: ${Colors.black};
     margin-left: 5px;
 `;
 
 export const TextMovement = styled.Text`
     font-size: 14px;
     font-weight: bold;
-    color: gray;
-    margin-left: 5px;
-`;
-export const TextDate = styled.Text`
-    font-size: 13px;
-    font-weight: bold;
-    color: gray;
+    color: ${Colors.grey};
     margin-left: 5px;
 `;
 
+export const TextDate = styled.Text`
+    font-size: 13px;
+    font-weight: bold;
+    color: ${Colors.grey};
+    margin-left: 5px;
+`;
 
 export const ContainerTitlePay = styled.View`
     width: 100%;
@@ -89,7 +86,6 @@ export const ContainerTitleAndIcon = styled.View`
     align-items: center;
 `;
 
-
 export const ContianerMoneyStatus = styled.View`
     width: 70%;
     border-radius: 10px;
@@ -100,7 +96,7 @@ export const ContianerMoneyStatus = styled.View`
 export const TextMoney = styled.Text`
     font-size: 15px;
     font-weight: bold;
-    color: black;
+    color: ${Colors.darkGrey};
     margin-left: 5px;
     
 `;
@@ -108,18 +104,16 @@ export const TextMoney = styled.Text`
 export const TextStatus = styled.Text`
     font-size: 13px;
     font-weight: bold;
-    color: gray;
+    color: ${Colors.grey};
     margin-left: 5px;
 `;
-
 
 export const ListFooter = styled.View`
     padding-top: 15px;
 `;
 
-
 export const Separator = styled.View`
-    height: 1px;
+    height: 2px;
     width: 100%;
-    background-color: #CED0CE;
+    background-color: ${Colors.gray};
 `;
